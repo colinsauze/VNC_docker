@@ -1,0 +1,29 @@
+server_names_hash_bucket_size 64;
+
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        proxy_pass             http://localhost:8000/;
+        proxy_pass_header Server;
+        proxy_set_header       Host $host;
+        proxy_buffering off;
+        index vnc.html;
+    }
+
+    location /websockify {
+          proxy_http_version 1.1;
+          proxy_pass http://localhost:8000/;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+
+          # VNC connection timeout
+          proxy_read_timeout 61s;
+
+          # Disable cache
+          proxy_buffering off;
+    }
+
+
+}
