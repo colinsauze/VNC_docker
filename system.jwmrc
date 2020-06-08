@@ -5,6 +5,7 @@
     <RootMenu onroot="12">
         <Include>/etc/jwm/debian-menu</Include>
         <Program icon="terminal.png" label="Terminal">lxterminal</Program>
+        <Program icon="/opt/anaconda/share/icons/spyder3.png" label="Spyder">/opt/anaconda/bin/spyder</Program>
     </RootMenu>
 
     <!-- Options for program groups. -->
