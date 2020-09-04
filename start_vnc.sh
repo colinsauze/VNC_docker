@@ -15,6 +15,8 @@ web_port=8000
 
 echo -n "password is "
 cat /tmp/passwd
-/opt/noVNC-1.0.0/utils/launch.sh --vnc localhost:$vnc_port --listen $web_port --cert /opt/server.cert
+#/opt/noVNC-1.0.0/utils/launch.sh --vnc localhost:$vnc_port --listen $web_port --cert /opt/server.cert
 
+#non-SSL version
+/opt/noVNC-1.0.0/utils/launch.sh --vnc localhost:$vnc_port --listen $web_port
 
