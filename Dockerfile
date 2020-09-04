@@ -8,7 +8,7 @@ COPY start_vnc.sh /
 ENV TZ=Europe/London
 RUN apt update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y pwgen tzdata git psmisc python3 python3-numpy net-tools && \
-    apt-get install -y tightvncserver jwm xterm wget nano expect nginx unzip lxterminal && \
+    apt-get install -y tigervnc-standalone-server jwm xterm wget nano expect nginx unzip lxterminal && \
     chmod 777 /*.sh && \
     update-alternatives --install /usr/bin/python python /usr/bin/python3 10 && useradd -m -s /bin/bash vnc && \
     cd /opt && wget https://github.com/novnc/noVNC/archive/v1.0.0.tar.gz -O webvnc-v1.0.0.tar.gz && \
